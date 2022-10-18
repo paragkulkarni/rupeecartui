@@ -47,8 +47,8 @@ class Sidemenu extends Component{
         return (
             
             <div className={open?"sidemenu":"wrapper"} ref={this.sideMenuId}>
-                <button type="button" className={open?"open-close":"btn-close"} onClick={()=>this.closeSideNav()}>
-                    {open? "CLOSE": "OPEN" }
+                <button type="button" className="btn-open" onClick={()=>this.closeSideNav()}>
+                    X
                 </button>
             </div>            
         );

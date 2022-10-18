@@ -25,12 +25,20 @@
 }
 
 
-.open-close{
-    position: relative;
-    left: 130px;
+.btn-open{
+    position: relative !important;
+    width: 70px;
+    height: 50px;
+    top: 10px;
+    left: 120px;
+    transition: 1s;
 }
-.btn-close{
-    // width: 0;
-    position: relative;
-    // transition: 1s;
+.sidebar.btn-close{
+    position: absolute;
+    background: none;
+    width: 70px;
+    height: 50px;
+    top: 10px;
+    left: 120px;
+    transition: 1s;
 }
