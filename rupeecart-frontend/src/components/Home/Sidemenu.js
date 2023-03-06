@@ -1,5 +1,8 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import React, { Component } from "react";
 import './style.scss';
+
 
 class Sidemenu extends Component{
     constructor(){
@@ -46,9 +49,9 @@ class Sidemenu extends Component{
         const {open, close} = this.state;
         return (
             
-            <div className={open?"sidemenu":"wrapper"} ref={this.sideMenuId}>
+            <div className={open?"sidemenu text-center":"wrapper"} ref={this.sideMenuId}>
                 <button type="button" className="btn-open" onClick={()=>this.closeSideNav()}>
-                    X
+                    <FontAwesomeIcon icon={faXmark} size={'1x'}/>
                 </button>
             </div>            
         );

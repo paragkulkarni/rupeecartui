@@ -1,15 +1,16 @@
 .wrapper {
     background-color: cadetblue;
     position: fixed;
-    left: 0;
     top: 0;
     width: 0;
     height: 100%;
-    padding: 20px 0;
+    // padding: 20px 0;
     overflow-x: hidden;
-    transition: 1s;
+    transition: 1s !important;
     z-index: 1;
 }
+
+
 
 .sidemenu {
     background-color: cadetblue;
@@ -18,27 +19,56 @@
     top: 0;
     width: 200px;
     height: 100%;
-    padding: 20px 0;
+    // padding: 20px 0;
     overflow-x: hidden;
-    transition: 1s;
+    transition: 1s !important;
     z-index: 1;
 }
 
+.nav-style{
+    background-color: #15ed89 !important;
+}
+
+.home-css{
+    border: none;
+    background-color: #15ed89 !important;
+}
+
+.cart-style{
+    width: 100px !important;
+    /* border-color: #6ab98c; */
+    border-radius: 26px;
+    margin-right: 20px;
+    border: 2px solid #4ad360;
+}
 
 .btn-open{
     position: relative !important;
-    width: 70px;
-    height: 50px;
-    top: 10px;
-    left: 120px;
+    background-color: cadetblue;
+    border: 1px solid #121414;
+    top: 0;
+    // left: 120px;
+    right: 0;
     transition: 1s;
+    border: 0;
+    border-radius: 10px;
 }
-.sidebar.btn-close{
+.btn-close{
     position: absolute;
     background: none;
-    width: 70px;
-    height: 50px;
-    top: 10px;
-    left: 120px;
+    
+    top: 0;
+    left: 0;
     transition: 1s;
+}
+
+.btn-logout{
+    color: #000 !important;
+    // border: 1px solid !important;
+    // border-color: coral !important;
+    border-radius: 0 !important;
+}
+
+.form-width{
+    width: 500px;
 }

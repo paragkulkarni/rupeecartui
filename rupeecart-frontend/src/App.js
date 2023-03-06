@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -8,7 +7,6 @@ import {
 } from "react-router-dom";
 import Login from './components/login/Login';
 import Signup from './components/Register/Signup';
-import NavBar from './components/Home/NavBar';
 import About from './components/About/About';
 import Home from './components/Home/Home';
 
@@ -17,7 +15,7 @@ import Home from './components/Home/Home';
 function App() {
   return (
     <Router>
-      <div className='container-fluid'>
+      <div className='container-fluid p-0 m-0'>
         <Routes>
           <Route exact path='/' element={<Login />} />
           <Route path='/signup' element={<Signup />} />

@@ -6,7 +6,7 @@ import NavBar from "./NavBar";
 class Home extends Component{
     render(){
         return (
-                <div className="container-fluid">
+                <div>
                     <NavBar />
                     <h1>Here is home</h1>
                     

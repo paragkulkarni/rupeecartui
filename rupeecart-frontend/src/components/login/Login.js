@@ -5,7 +5,7 @@ import './login.scss';
 class Login extends Component{
     render(){
         return (
-                <div className="form justify-content-center mx-auto">
+                <div className="form justify-content-center mx-auto form-width">
                     <div className="form-group">
                         <label for="uid">Username / Email</label>
                         <input type="text" id="uid" className="form-control" />
