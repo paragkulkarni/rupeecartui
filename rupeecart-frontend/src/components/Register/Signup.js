@@ -1,6 +1,5 @@
 import { Component } from "react";
-import axios from "axios";
-import api_rupeekart_auth from "../../environment/environemnt-dev";
+import { regAuthService } from '../../Services/AuthService'
 class Signup extends Component{
     constructor(){
         super();
@@ -9,7 +8,8 @@ class Signup extends Component{
             lastname: '',
             email: '',
             password: '',
-            confirmPassword: ''
+            confirmPassword: '',
+            regSuccess: null
         }
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
@@ -54,27 +54,25 @@ class Signup extends Component{
         }
         console.log("here-",data)
 
-        const postCall = axios({
-            method: 'post',
-            url: 'http://localhost:3000/users/register',
-            data: {
-                first_name: this.state.firstname,
-                last_name: this.state.lastname,
-                email: this.state.email,
-                password: this.state.password
-            },
-            headers: {
-                'Access-Control-Allow-Origin': '*'
+        const regUser =  regAuthService(data)
+        regUser.then(result=>{
+            console.log("Register-",result)
+            if(result.status==201 && result.data.success){
+                return this.setState({
+                    regSuccess: true, 
+                    firstname: result.data.data.first_name,
+                    lastname: result.data.data.last_name
+                })
             }
-        });
-        postCall.then(result=>{
-            console.log("test - ",result)
         })
     }
 
     render(){
         return (
-                <div className="form justify-content-center mx-auto form-width mt-5" >
+            <div>
+                {this.state.regSuccess && (<h3>Hi <b>{this.state.firstname + ' ' + this.state.lastname}</b>, you are successfully register. Thank you</h3>)}
+                {!this.state.regSuccess && 
+                (<div className="form justify-content-center mx-auto form-width mt-5" >
                     <h1 className="text-center">Register</h1>
                     <div className="form-group">
                         <label htmlFor="f-name">Firstname</label>
@@ -99,7 +97,8 @@ class Signup extends Component{
                     <div className="text-center">
                         <button onClick={this.handleFormSubmit} className="btn btn-primary mt-3">Signup</button>
                     </div>
-                </div>
+                </div>)}
+            </div>
         );
     }
 }

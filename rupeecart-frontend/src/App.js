@@ -17,8 +17,8 @@ function App() {
     <Router>
       <div className='container-fluid p-0 m-0'>
         <Routes>
-          <Route exact path='/' element={<Login />} />
-          <Route path='/signup' element={<Signup />} />
+          <Route exact path='/login' element={<Login />} />
+          <Route path='/register' element={<Signup />} />
           <Route path='/about' element={<About />} />
           <Route path='/home' element={<Home />} />
         </Routes>
